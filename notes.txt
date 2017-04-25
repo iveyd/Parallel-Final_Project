@@ -1,0 +1,4 @@
+all reduce track total type wins
+
+weekness matrix
+
