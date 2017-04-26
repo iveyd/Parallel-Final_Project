@@ -14,19 +14,18 @@
 /* Defines *****************************************************************/
 /***************************************************************************/
 
-#define NUMTYPES 17
-#define JUMPVAL 0.80
-#define EQUALIZER 0.08
+#define NUMTYPES    18
+
+#define JUMPVAL     0.80
+#define EQUALIZER   0.08
 
 /***************************************************************************/
 /* Function Declarations ***************************************************/
 /***************************************************************************/
 
-int getOwner( int index, int row_size );
 void createArray( int* array, int size );
 void freeMatrix( int** matrix, int count );
-void createMatrix( int** matrix, int count, int mpi_commsize );
-void createWeaknessMatrix( int** matrix, int count, int mpi_commsize );
+void createMatrix( int** matrix, int count );
 
 
 #endif

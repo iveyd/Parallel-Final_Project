@@ -14,45 +14,27 @@ void freeMatrix( int** matrix, int count ) {
 
 }
 
-void createMatrix( int** matrix, int row_size, int col_size ) {
+void createMatrix( int** matrix, int size ) {
 
     int i,j;
     
-    for ( i = 0; i < row_size; ++i ) {
+    for ( i = 0; i < size; ++i ) {
     
-        int* col = ( int* ) calloc( col_size, sizeof( int ) );
+        int* col = ( int* ) calloc( size, sizeof( int ) );
     
-        for ( j = 0; j < col_size; ++j ) {
+        for ( j = 0; j < size; ++j ) {
     
             if ( i != j ) {
     
-                col[j] = rand() % 1;
+                if ( ( rand() % 18 ) < 13 ) {
+                    
+                    col[j] = 1;
+                
+                }
     
             } 
 
-        }
-    
-        matrix[i] = col;
-    
-    }
-
-}
-
-void createWeaknessMatrix( int** matrix, int row_size, int col_size ) {
-
-    int i,j;
-    
-    for ( i = 0; i < row_size; ++i ) {
-    
-        int* col = ( int* ) calloc( col_size, sizeof( int ) );
-    
-        for ( j = 0; j < col_size; ++j ) {
-    
-            // if ( rand() % 2 ) {
-
-                col[j] = 1;
-
-            // }
+            // printf("%d\n", col[j]);
 
         }
     
@@ -71,11 +53,5 @@ void createArray( int* array, int size ) {
         array[i] = rand() % NUMTYPES;
 
     }
-
-}
-
-int getOwner( int index, int row_size ) {
-
-    return index/row_size;
 
 }
